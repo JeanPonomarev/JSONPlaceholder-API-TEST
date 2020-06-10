@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="JSONPlaceholder-API-Test">
+    <test name="JSONPlaceholder-API-Get-Operations-Test">
+        <classes>
+            <class name="com.typicode.jsonplaceholder.test_cases.get_operations.get_all_posts.GetPostsListTest">
+                <methods>
+                    <include name="testGetAllPostsFromDatabase"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.get_operations.get_post_by_id.GetPostByValidIdTest">
+                <methods>
+                    <include name="testGetPostByValidId"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.get_operations.get_post_by_id.GetPostByWrongIdTest">
+                <methods>
+                    <include name="testGetPostByNonexistentId"/>
+                    <include name="testGetPostByInvalidId"/>
+                    <include name="testGetPostByLargeId"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.get_operations.get_posts_by_user_id.GetPostsByValidUserIdTest">
+                <methods>
+                    <include name="testGetPostsByValidUserId"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.get_operations.get_posts_by_user_id.GetPostsByWrongUserIdTest">
+                <methods>
+                    <include name="testGetPostByNonexistentUserId"/>
+                    <include name="testGetPostByInvalidUserId"/>
+                    <include name="testGetPostByLargeUserId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="JSONPlaceholder-API-Post-Operations-Test">
+        <classes>
+            <class name="com.typicode.jsonplaceholder.test_cases.post_operations.CreateCorrectNewPostTest">
+                <methods>
+                    <include name="testCreatePostWithCorrectData"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.post_operations.CreatePostWithWrongDataTest">
+                <methods>
+                    <include name="testCreatePostWithWrongData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="JSONPlaceholder-API-Update-Operations-Test">
+        <classes>
+            <class name="com.typicode.jsonplaceholder.test_cases.update_operations.UpdatePostWithCorrectDataTest">
+                <methods>
+                    <include name="testUpdatePostWithCorrectData"/>
+                </methods>
+            </class>
+
+            <class name="com.typicode.jsonplaceholder.test_cases.update_operations.UpdatePostWithWrongDataTest">
+                <methods>
+                    <include name="testUpdatePostWithIncorrectPathId"/>
+                    <include name="testUpdatePostWithWrongBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="JSONPlaceholder-API-Delete-Operations-Test">
+        <classes>
+            <class name="com.typicode.jsonplaceholder.test_cases.delete_operations.DeletePostTest">
+                <methods>
+                    <include name="testDeleteExistentPost"/>
+                    <include name="testDeleteNonexistentPost"/>
+                    <include name="testDeletePostByIncorrectId"/>
+                    <include name="testDeletePostByLargeId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
